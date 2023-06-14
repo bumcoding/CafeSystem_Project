@@ -1,6 +1,6 @@
 class BeverageMachine {
-    static brewDrink(drinkName) {
-        return new Promise((resolve, reject) => {
+    brewDrink(drinkName) {
+        return new Promise((resolve) => {
             console.log(`음료기계: ${drinkName} 제조 시작...`);
             setTimeout(() => {
                 console.log(`음료기계: ${drinkName} 완성!`);
