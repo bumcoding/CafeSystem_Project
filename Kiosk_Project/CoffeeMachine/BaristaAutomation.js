@@ -19,8 +19,9 @@ class BaristaAutomation {
 
     makeDrink(order) {
         console.log(`자동화 시스템: 주문하신 ${order.menuName} 제조를 시작합니다.`);
-        let drink = BeverageMachine.brewDrink(order.menuName);
-        this.notifyObservers(drink);
+        BeverageMachine.brewDrink(order.menuName).then(drink => {
+            this.notifyObservers(drink); // 음료 제조가 완료된 후에 observer에게 알림
+        });
     }
 };
 

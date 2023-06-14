@@ -1,5 +1,5 @@
-import CoffeeMenu from './CoffeeMenu.js';
 import AdeMenu from './Factories/AdeMenu.js';
+import CoffeeMenu from './Factories/CoffeeMenu.js';
 import LatteMenu from './Factories/LatteMenu.js';
 
 const customer1 = new CoffeeMenu();

@@ -1,7 +1,7 @@
-import Americano from './Beverages/Coffee/Americano.js';
-import Coldbrew from './Beverages/Coffee/Coldbrew.js';
-import Espresso from './Beverages/Coffee/Espresso.js';
-import CafeMenu from './Factories/CafeMenu.js';
+import Americano from '../Beverages/Coffee/Americano.js';
+import Coldbrew from '../Beverages/Coffee/Coldbrew.js';
+import Espresso from '../Beverages/Coffee/Espresso.js';
+import CafeMenu from '../CafeMenu.js';
 
 class CoffeeMenu extends CafeMenu {
     createOrder() {

@@ -1,8 +1,12 @@
 class BeverageMachine {
     static brewDrink(drinkName) {
-        console.log(`음료기계: ${drinkName} 제조 시작...`);
-        console.log(`음료기계: ${drinkName} 완성!`);
-        return { name: drinkName };
+        return new Promise((resolve, reject) => {
+            console.log(`음료기계: ${drinkName} 제조 시작...`);
+            setTimeout(() => {
+                console.log(`음료기계: ${drinkName} 완성!`);
+                resolve({ name: drinkName }); // 음료 제조가 완료된 후 Promise를 resolve
+            }, 3000); // 음료 제조 시간을 3초로 설정
+        });
     }
 };
 
