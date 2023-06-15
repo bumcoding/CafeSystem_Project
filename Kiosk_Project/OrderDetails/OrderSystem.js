@@ -1,3 +1,7 @@
+// 주문 시스템을 관리하는 핵심 클래스로 현재 주문 리스트를 출력하는 기능을 제공한다
+// 주문을 받아 처리하고, 결제를 진행한 뒤, 바리스타 자동화 시스템에게 음료 제조를 요청한다.
+
+
 import BaristaAutomation from '../CoffeeMachine/BaristaAutomation.js';
 import Customer from '../Customer.js';
 import PaymentFacade from '../PaymentSystem/CardPaymentFacade.js';
@@ -13,10 +17,8 @@ class OrderSystem {
         createOrder(menu);
         const order = getOrders()[getOrders().length - 1];
         const customer = new Customer(customerName, order);
-        
-        // 주문을 먼저 생성하고 결제를 진행
+
         this.processPayment().then(() => {
-            // 결제가 완료된 후에 음료 제조를 시작
             customer.placeOrder(this.baristaAutomation);
         });
     }
@@ -30,7 +32,7 @@ class OrderSystem {
         // PaymentFacade의 processPayment() 메서드가 Promise를 반환하도록 변경
         return new Promise((resolve) => {
             this.paymentFacade.processPayment();
-            setTimeout(resolve, 3000);  // 결제 시간이 3초라고 가정
+            setTimeout(resolve, 3000);
         });
     }
 }

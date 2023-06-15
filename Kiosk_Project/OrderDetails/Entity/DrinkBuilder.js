@@ -1,21 +1,22 @@
+// Builder 패턴을 이용하여 주문 객체를 생성하는 클래스
+// 메뉴 이름과 가격을 설정한 뒤, 주문 객체를 생성하여 반환한다
+// 이 클래스를 이용하면 주문 객체를 유연하게 생성하고 관리할 수 있다
+
 class DrinkBuilder {
     constructor() {
-        this.order = {};  // 이 객체에 주문 정보를 담음
+        this.order = {};
     }
 
-    // 메뉴 이름을 설정하는 메소드
     setMenuName(menuName) {
         this.order.menuName = menuName;
         return this;
     }
 
-    // 메뉴 가격을 설정하는 메소드
     setMenuPrice(menuPrice) {
         this.order.menuPrice = menuPrice;
         return this;
     }
 
-    // 최종적으로 주문 객체를 반환하는 메소드
     build() {
         return this.order;
     }

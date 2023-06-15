@@ -1,3 +1,6 @@
+// 음료를 만드는 자동화 시스템을 제어하며, observer 패턴을 통해 음료 제조 완료 시 알림을 주는 클래스
+// 인스턴스를 사용하여 음료를 제조하고, 제조 완료 시 등록된 observer에게 알림을 준다
+
 import BeverageMachine from './BeverageMachine.js';
 
 class BaristaAutomation {
